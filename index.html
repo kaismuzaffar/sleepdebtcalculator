@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Sleep Debt Calculator</title>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Sleep Debt Calculator</h1>
+    <label for="idealHours">Ideal Hours of Sleep per Night:</label>
+    <input type="number" id="idealHours" placeholder="Enter ideal sleep hours">
+    <label for="sleepHours">Sleep Hours for Each Night:</label>
+    <ul id="sleepHours">
+      <li><input type="number" placeholder="Monday"></li>
+      <li><input type="number" placeholder="Tuesday"></li>
+      <li><input type="number" placeholder="Wednesday"></li>
+      <li><input type="number" placeholder="Thursday"></li>
+      <li><input type="number" placeholder="Friday"></li>
+      <li><input type="number" placeholder="Saturday"></li>
+      <li><input type="number" placeholder="Sunday"></li>
+    </ul>
+    <button id="calculateButton">Calculate Sleep Debt</button>
+    <p id="result"></p>
+  </div>
+  <script>
+    const calculateButton = document.getElementById("calculateButton");
+    calculateButton.addEventListener("click", calculateSleepDebt);
+
+    function calculateSleepDebt() {
+      // ... Your existing calculation logic from the previous examples ...
+      // Replace the console.log statements with updating the #result element
+      const resultElement = document.getElementById("result");
+
+      if (sleepDebt > 0) {
+        resultElement.textContent = `You are ${sleepDebt} hours short of your weekly sleep goal.`;
+      } else if (sleepDebt < 0) {
+        resultElement.textContent = `You have exceeded your weekly sleep goal by ${-sleepDebt} hours.`;
+      } else {
+        resultElement.textContent = `You have achieved your weekly sleep goal!`;
+      }
+    }
+  </script>
+</body>
+</html>
