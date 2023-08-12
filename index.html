@@ -25,23 +25,5 @@
     <button id="calculateButton">Calculate Sleep Debt</button>
     <p id="result"></p>
   </div>
-  <script>
-    const calculateButton = document.getElementById("calculateButton");
-    calculateButton.addEventListener("click", calculateSleepDebt);
-
-    function calculateSleepDebt() {
-      // ... Your existing calculation logic from the previous examples ...
-      // Replace the console.log statements with updating the #result element
-      const resultElement = document.getElementById("result");
-
-      if (sleepDebt > 0) {
-        resultElement.textContent = `You are ${sleepDebt} hours short of your weekly sleep goal.`;
-      } else if (sleepDebt < 0) {
-        resultElement.textContent = `You have exceeded your weekly sleep goal by ${-sleepDebt} hours.`;
-      } else {
-        resultElement.textContent = `You have achieved your weekly sleep goal!`;
-      }
-    }
-  </script>
 </body>
 </html>

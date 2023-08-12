@@ -34,16 +34,20 @@ function calculateSleepDebt() {
     // Calculate ideal sleep hours for the week
     const idealSleepHours = idealHoursPerNight * daysInWeek;
   
-    // Calculate sleep debt
-    const sleepDebt = idealSleepHours - actualSleepHours;
-  
-    if (sleepDebt > 0) {
-      console.log(`You are ${sleepDebt} hours short of your weekly sleep goal.`);
-    } else if (sleepDebt < 0) {
-      console.log(`You have exceeded your weekly sleep goal by ${-sleepDebt} hours.`);
-    } else {
-      console.log(`You have achieved your weekly sleep goal!`);
-    }
+
+    const calculateButton = document.getElementById("calculateButton");
+    calculateButton.addEventListener("click", calculateSleepDebt);
+
+      const resultElement = document.getElementById("result");
+
+      if (sleepDebt > 0) {
+        resultElement.textContent = `You are ${sleepDebt} hours short of your weekly sleep goal.`;
+      } else if (sleepDebt < 0) {
+        resultElement.textContent = `You have exceeded your weekly sleep goal by ${-sleepDebt} hours.`;
+      } else {
+        resultElement.textContent = `You have achieved your weekly sleep goal!`;
+      }
+      
   }
   
   // Call the function to calculate sleep debt
